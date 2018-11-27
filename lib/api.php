@@ -20,7 +20,6 @@ if (getGet('app') == 'cal' && getPost('month') && getPost('year')) {
     $day = date("w", mktime(0, 0, 0, getPost('month'), 1, getPost('year')))-1; // 1 Monday
     $nbDay = cal_days_in_month(CAL_GREGORIAN, getPost('month'), getPost('year'));
     
-    echo $day;
     echo '
         <table class="tg" border=1>
             <colgroup>
