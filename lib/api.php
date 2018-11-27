@@ -47,8 +47,8 @@ if (getGet('app') == 'cal' && getPost('month') && getPost('year')) {
         for ($i = 0; $i < 35; $i++) {
             if ($i == 0 || $i == 7 || $i == 14 || $i ==  21 || $i == 28)
                 echo '<tr>';
-            if ($i >= $day)
-                echo '<td class="tg-c3ow">'.($i-$day+1).'</td>';
+            if ($i > $day)
+                echo '<td class="tg-c3ow">'.($i-$day).'</td>';
             else
                 echo '<td class="tg-c3ow"></td>';
             if ($i == 6 || $i == 13 || $i == 20 || $i ==  27 || $i == 34)
