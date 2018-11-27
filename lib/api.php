@@ -17,9 +17,10 @@ if (getGet('app') == 'cal' && getPost('month') && getPost('year')) {
     $month = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
     
     $date = $month[(getPost('month')-1)].' '.getPost('year');
-
-    $day = date("w", mktime(0, 0, 0, getPost('month'))); // 1 Monday
-
+    $day = date("w", mktime(0, 0, 0, getPost('month'), 1, getPost('year')))-1; // 1 Monday
+    $nbDay = cal_days_in_month(CAL_GREGORIAN, getPost('month'), getPost('year'));
+    
+    echo $day;
     echo '
         <table class="tg" border=1>
             <colgroup>
@@ -43,13 +44,15 @@ if (getGet('app') == 'cal' && getPost('month') && getPost('year')) {
                 <td class="tg-svo0">Samedi</td>
                 <td class="tg-svo0">Dimanche</td>
             </tr>';
+        $count = 1;
 
         for ($i = 0; $i < 35; $i++) {
             if ($i == 0 || $i == 7 || $i == 14 || $i ==  21 || $i == 28)
                 echo '<tr>';
-            if ($i > $day)
-                echo '<td class="tg-c3ow">'.($i-$day).'</td>';
-            else
+            if ($i >= $day && $count <= cal_days_in_month(CAL_GREGORIAN, getPost('month'), getPost('year'))) {
+                echo '<td class="tg-c3ow">'.$count.'</td>';
+                $count++;
+            }else
                 echo '<td class="tg-c3ow"></td>';
             if ($i == 6 || $i == 13 || $i == 20 || $i ==  27 || $i == 34)
                 echo '</tr>';
