@@ -61,7 +61,7 @@ function getPost($k) { // Fist secure for $_POST
 }
 
 function partie($id) { // Generate array with answer data
-    echo $id;
+    
     if ($id == 'calc1')
         include('lib/bonus'.substr($id, -1).'.php');
     else
