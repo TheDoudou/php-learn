@@ -17,13 +17,13 @@ class Calc {
     const PD = 10; // Profondeur max
 
     public function calcul($in){
-        if(strpos($in, '+') != null || strpos($in, '-') != null || strpos($in, '/') != null || strpos($in, '*') != null){
+        if (strpos($in, '+') != null || strpos($in, '-') != null || strpos($in, '/') != null || strpos($in, '*') != null){
             
             $in = str_replace(',', '.', $in);
             $in = preg_replace('[^0-9\.\+\-\*\/\(\)]', '', $in);
 
             $i = 0;
-            while((strpos($in, '(') || strpos($in, ')')) && $i < self::PD) { // Not very good
+            while ((strpos($in, '(') || strpos($in, ')'))) {
                 $in = preg_replace_callback('/\(([^\(\)]+)\)/', 'self::callback', $in);
 
                 $i++;
@@ -33,10 +33,10 @@ class Calc {
                 return 'Error ()';
             }
 
-            if(preg_match(self::PAT, $in, $match))
+            if (preg_match(self::PAT, $in, $match))
                 return $this->compute($match[0]);
             
-            if(is_numeric($in))
+            if (is_numeric($in))
                 return $in;
 
             return 0;
