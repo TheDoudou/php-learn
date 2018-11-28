@@ -97,6 +97,8 @@ function pagination() {
     $offset = 1;
     $byPage = 4;
     $page = 0;
+    $colxl = 3;
+    $collg = 6;
 
     if (getGet('page')) {
         $offset = getGet('page')*$byPage+1;
@@ -128,11 +130,15 @@ function pagination() {
                         <div class="row articles" style="margin-bottom: 15px;">';
 
     for ($i = 0; $i < $byPage; $i++) {
-        $return .= '        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 item"><!-- <img class="img-fluid" src="assets/img/desk.jpg"> -->
-                                <h3 class="name">'.$data[$offset+$i]['titre'].'</h3>
-                                <p class="description">'.$data[$offset+$i]['letexte'].'</p>
-                                <p class="text-right">'.$data[$offset+$i]['ladate'].'</p>
+        if ($data[$offset+$i]['titre']) {
+            $return .= '        <div class="col-sm-'.$collg.' col-md-'.$collg.' col-lg-'.$collg.' col-xl-'.$colxl.' item">
+                                   <div class="bg-color">
+                                    <h3 class="name">'.$data[$offset+$i]['titre'].'</h3>
+                                    <p class="description">'.$data[$offset+$i]['letexte'].'</p>
+                                    <p class="text-right">'.$data[$offset+$i]['ladate'].'</p>
+                                </div>
                             </div>';
+        }
     }
     $return .= '         </div>
                     </div>
