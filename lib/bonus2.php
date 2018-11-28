@@ -103,7 +103,7 @@ function pagination() {
         $page = getGet('page');
     }
     
-    if ($page > 1)
+    if ($page >= 1)
         $return = '[<a href="index.php?view=11&page='.($page-1).'">Page précédente</a>] ';
     if ($offset+$byPage < count($data))
         $return .= '[<a href="index.php?view=11&page='.($page+1).'">Page suivante</a>] ';
