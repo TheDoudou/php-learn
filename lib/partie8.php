@@ -91,7 +91,7 @@ function p8_ex3() {
     }
 
     return '
-        <form method="POST" action="index.php?view=7">
+        <form method="POST" action="index.php?view=8">
             <p>
                 <label for="pseudo">Votre pseudo :</label>
                 <input type="text" name="pseudo" id="pseudo" value="'.getPost('pseudo').'" />
@@ -120,7 +120,7 @@ function p8_ex5() {
     if ($_COOKIE["actEncode"] || getPost('pseudo'))
         return '
             Vu que mon formulaire set de toute facon le cookie voici un bouton pour l\'effacer.<br />
-            <form method="POST" action="index.php?view=7">
+            <form method="POST" action="index.php?view=8">
                 <p>
                     <input type="submit" name="delCook" value="Effacer Cookie">
                 <p>

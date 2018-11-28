@@ -201,7 +201,7 @@ function generateView() { // Gestion view for menu
 </head>
 <body>
     <header>
-        <a href="../">Retour</a><hr>
+        [<a href="../">Retour</a>] - [<a href="https://github.com/TheDoudou/php-learn/" target="_blank">Source</a>]<hr>
         <? echo generateMenu($t); ?><hr>
     </header>
     <?

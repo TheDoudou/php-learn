@@ -11,7 +11,7 @@ function p7_ex1($formMethod, $exId) { // Not clean but work fine with my system 
     $formFileState = func_get_args()[3];
     $formFileAcept = func_get_args()[4];
 
-    $file = ['index.php?view=6', 'user.php'];
+    $file = ['index.php?view=7', 'user.php'];
 
     if ($met == 'post') { // Small bug return value in all same method form
         $nom = getPost('nom_'.$exval);
@@ -62,7 +62,7 @@ function p7_ex1($formMethod, $exId) { // Not clean but work fine with my system 
                 <br />
                 '.$formFile.'
                 <input type="hidden" name="exercice" value="'.$exval.'" />
-                <input type="hidden" name="view" value="6" />
+                <input type="hidden" name="view" value="7" />
                 <input type="submit" name="send_'.$exval.'" value="Envoyer" />
             </p>
         </form>';

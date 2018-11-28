@@ -11,7 +11,7 @@ function p6_ex1($nom, $prenom) {
     if (preg_match($regex, $nom.' '.$prenom))
         return 'Salut '.$prenom.', la famille '.$nom.' vas bien ?';
     else
-        return 'Pas de get url (ou vide) : <a id="p6_ex1" href="index.php?view=5&nom=Nemare&prenom=Jean">index.php?nom=Nemare&prenom=Jean</a>'; 
+        return 'Pas de get url (ou vide) : <a id="p6_ex1" href="index.php?view=6&nom=Nemare&prenom=Jean">index.php?nom=Nemare&prenom=Jean</a>'; 
 }
 
 //$data[5][0] = p6_ex1(getGet('nom'), getGet('prenom'));
@@ -23,7 +23,7 @@ function p6_ex2($age) {
     if (preg_match($regex, $age))
         return 'Salut tu a : '.$age .' ans';
     else
-        return 'Pas de get url (ou vide) : <a id="p6_ex2" href="index.php?view=5&age=42">index.php?age=42</a>';
+        return 'Pas de get url (ou vide) : <a id="p6_ex2" href="index.php?view=6&age=42">index.php?age=42</a>';
 }
 
 //$data[5][1] = p6_ex2(getGet('age'));
@@ -35,7 +35,7 @@ function p6_ex3() {
     $regex = '/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/';
     $rand1 = date('d/m/Y', mt_rand(1262055681, time()-86400));
     $rand2 = date('d/m/Y', time());
-    $url = 'index.php?dateDebut='.$rand1.'&dateFin='.$rand2.'&view=5';
+    $url = 'index.php?dateDebut='.$rand1.'&dateFin='.$rand2.'&view=6';
 
     if (preg_match($regex, $dateDebut) && preg_match($regex, $dateFin))
         return 'Date début : '.$dateDebut .'<br />Date fin : '.$dateFin;
@@ -50,7 +50,7 @@ function p6_ex4($langage, $serveur) {
     $d['lang'] = ['html', 'php', 'css', 'python']; // Etc etc
     $d['serv'] = ['apache', 'lamp', 'ngix', 'mamp'];
     $rand = mt_rand(0, 3);
-    $url = 'index.php?langage='.$d['lang'][$rand].'&serveur='.$d['serv'][$rand].'&view=5';
+    $url = 'index.php?langage='.$d['lang'][$rand].'&serveur='.$d['serv'][$rand].'&view=6';
 
     if (in_array(strtolower($langage), $d['lang']) && in_array(strtolower($serveur), $d['serv']))
         return 'Langage : '.$langage .'<br />Serveur : '.$serveur;
@@ -68,7 +68,7 @@ function p6_ex5($week) {
     if (preg_match($regex, $week)) {
         return 'Semaine : '.$week;
     } else
-        return 'Pas de get url (ou vide) : <a id="p6_ex5" href="index.php?view=5&semaine='.$rand.'">index.php?semaine='.$rand.'</a>';
+        return 'Pas de get url (ou vide) : <a id="p6_ex5" href="index.php?view=6&semaine='.$rand.'">index.php?semaine='.$rand.'</a>';
 }
 
 //$data[5][4] = p6_ex5(getGet('semaine'));
@@ -80,7 +80,7 @@ function p6_ex6() {
     $d = ['1' => ['1', '2'], '12' => ['101'], 'Chez Leon' => ['Grande salle', 'Petite salle']];
     $rand1 = array_rand($d, 1);
     $rand2 = array_rand($d[$rand1], 1);
-    $url = 'index.php?batiment='.$rand1.'&salle='.$rand2.'&view=5';
+    $url = 'index.php?batiment='.$rand1.'&salle='.$rand2.'&view=6';
 
     if (array_key_exists(strtolower($building), $d) && in_array(strtolower($room), $d[$building]))
         return 'Batiment : '.$building .'<br />Salle : '.$room;
