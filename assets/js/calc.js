@@ -1,14 +1,14 @@
 
 (function () {
-    var currentInput = [];
-    var currentCalculated = null;
-    var previousInput = [];
-    var numberInputs = getElement(".input:not(.c)");
-    var operatorInputs = getElement(".operator");
-    var equalsButton = getElement("#equals");
-    var resetButton = getElement("#reset");
-    var previousViewer = getElement(".previous")[0];
-    var currentViewer = getElement(".current")[0];
+    let currentInput = [];
+    let currentCalculated = null;
+    let previousInput = [];
+    let numberInputs = getElement(".input:not(.c)");
+    let operatorInputs = getElement(".operator");
+    let equalsButton = getElement("#equals");
+    let resetButton = getElement("#reset");
+    let previousViewer = getElement(".previous")[0];
+    let currentViewer = getElement(".current")[0];
 
     function onNumberClicked() {
         let value = this.getAttribute("id");
