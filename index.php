@@ -42,7 +42,8 @@ $t['title'] = [
     'Les formulaires',
     'Les variables globales, $SESSION',
     'Les dates',
-    'Calculatrice'];
+    'Calculatrice',
+    'Pagination'];
 
 if (getGet('view') == '10')
     $t['stitle'] = 'Calculatrice ';
@@ -65,6 +66,8 @@ function partie($id) { // Generate array with answer data
 
     if ($id == '10')
         include('lib/bonus1.php');
+    else if ($id == '11')
+        include('lib/bonus2.php');
     else
         include('lib/partie'.$id.'.php');
 
@@ -140,6 +143,10 @@ function partie($id) { // Generate array with answer data
     } else if ($id == '10') {
 
         $return[0][0] = viewCalc();
+
+    } else if ($id == '11') {
+
+        $return[0][0] = pagination();
 
     }
     return $return;

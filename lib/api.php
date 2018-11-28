@@ -14,7 +14,7 @@ function getPost($k) { // Fist secure for $_POST
 
 class Calc {
     const PAT = '/(?:\-?\d+(?:\.?\d+)?[\+\-\*\/])+\-?\d+(?:\.?\d+)?/';
-    const PD = 10;
+    const PD = 10; // Profondeur max
 
     public function calcul($in){
         if(strpos($in, '+') != null || strpos($in, '-') != null || strpos($in, '/') != null || strpos($in, '*') != null){
