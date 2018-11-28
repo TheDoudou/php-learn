@@ -210,6 +210,7 @@ function generateView() { // Gestion view for menu
 
 
     <? if (getGet('view') == 'calc1') { // Test d'une calto ?>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="assets/js/calc.js"></script>
     <? } ?>
 </body>

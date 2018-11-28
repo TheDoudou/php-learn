@@ -31,7 +31,7 @@ function p9_ex4() {
 function p9_ex5() {
     $start = strtotime('16-05-2016');
     $end = strtotime('now');
-    $return = ceil(abs($fin - $debut) / 86400);
+    $return = ceil(abs($end - $start) / 86400);
 
     return $return.' jours entre le 16-05-2016 et le '.date('d-m-Y').'.';
 }
