@@ -200,7 +200,6 @@ function generateView() { // Gestion view for menu
     <? } ?>
     <? if (getGet('view') == '11') { ?>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/Bold-BS4-Jumbotron-with-Particles-js-1.css">
         <link rel="stylesheet" href="assets/css/Bold-BS4-Jumbotron-with-Particles-js.css">
     <? } ?>
 </head>
