@@ -41,9 +41,10 @@ $t['title'] = [
     'Les paramètres',
     'Les formulaires',
     'Les variables globales, $SESSION',
-    'Les dates'];
+    'Les dates',
+    'Calculatrice'];
 
-if (getGet('view') == 'calc1')
+if (getGet('view') == '10')
     $t['stitle'] = 'Calculatrice ';
 else
     $t['stitle'] = 'Exercice '; // And h3
@@ -62,8 +63,8 @@ function getPost($k) { // Fist secure for $_POST
 
 function partie($id) { // Generate array with answer data
 
-    if ($id == 'calc1')
-        include('lib/bonus'.substr($id, -1).'.php');
+    if ($id == '10')
+        include('lib/bonus1.php');
     else
         include('lib/partie'.$id.'.php');
 
@@ -136,7 +137,7 @@ function partie($id) { // Generate array with answer data
         $return[0][7] = p9_ex8();
         $return[0][8] = p9_ex9();
 
-    } else if ($id == 'calc1') {
+    } else if ($id == '10') {
 
         $return[0][0] = viewCalc();
 
@@ -147,8 +148,8 @@ function partie($id) { // Generate array with answer data
 function generateMenu($l) { // Generate Header menu
     for ($i = 0; $i < count($l['title']); $i++) {
         $return .= '[<a href="index.php?view='.($i+1).'">'.$l['title'][$i].'</a>] ';
-        //if ($i == 4)
-        //    $return .= '<br />';
+        if ($i == 5)
+            $return .= '<br />';
     }
 
     return $return;
@@ -185,9 +186,9 @@ function generateView() { // Gestion view for menu
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PHP - <? echo $t['title'][getGet('view')]; ?></title>
+    <title>PHP - <? echo $t['title'][getGet('view')-1]; ?></title>
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <? if (getGet('view') == 'calc1') { ?>
+    <? if (getGet('view') == '10') { ?>
         <link rel="stylesheet" type="text/css" href="assets/css/calc.css">
     <? } ?>
 </head>
@@ -203,13 +204,13 @@ function generateView() { // Gestion view for menu
 
     <script src="assets/js/main.js"></script>
 
-    <? if (getGet('view') == 9) {?>
+    <? if (getGet('view') == '9') {?>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="assets/js/cal.js"></script>
     <? } ?>
 
 
-    <? if (getGet('view') == 'calc1') { // Test d'une calto ?>
+    <? if (getGet('view') == '10') { // Test d'une calto ?>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="assets/js/calc.js"></script>
     <? } ?>
