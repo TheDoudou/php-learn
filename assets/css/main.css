@@ -3,6 +3,8 @@
     font-family: "Segoe UI";
   }
 
+
+/* For table calendar */
 .tg  {
     border-collapse:collapse;
     border-spacing:0;
@@ -47,3 +49,5 @@
     text-align:center;
     vertical-align:top
 }
+
+/* For pagination */

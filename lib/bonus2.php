@@ -102,18 +102,45 @@ function pagination() {
         $offset = getGet('page')*$byPage+1;
         $page = getGet('page');
     }
-    
-    if ($page >= 1)
-        $return = '[<a href="index.php?view=11&page='.($page-1).'">Page précédente</a>] ';
-    if ($offset+$byPage < count($data))
-        $return .= '[<a href="index.php?view=11&page='.($page+1).'">Page suivante</a>] ';
 
-    $return .= '<br />';
+    $return = '<div class="jumbotron jumbotron-fluid jumbotron-main"><script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+    <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+        <div id="particles-js">
+        <canvas class="particles-js-canvas-el" width="1409" height="319" style="width: 100%; height: 100%;"></canvas>
+        </div>
+            <div class="container center-vertically-holder" style="margin-top:-20px;">
+                <div class="row center-vertically">
+                    <div class="col">
+                        <div class="intro">
+                            <h2 class="text-center" style="margin-top: 58px; margin-bottom: 58px;">Articles</h2>
+                        </div>
+                        <div class="btn-toolbar justify-content-between" style="margin-bottom: 15px;">';
+    if ($page >= 1)
+        $return .= '        <a href="index.php?view=11&page='.($page-1).'"><div class="btn-group" role="group"><button class="btn btn-primary" type="button">Précédent</button></div></a>';
+    else
+        $return .= '        <div class="btn-group" role="group"><button class="btn btn-primary" type="button" disabled="disabled">Précédent</button></div>';
+
+    if ($offset+$byPage < count($data))
+        $return .= '        <a href="index.php?view=11&page='.($page+1).'"><div class="btn-group" role="group"><button class="btn btn-primary" type="button">Suivant</button></div></a>';
+    else
+        $return .= '        <div class="btn-group" role="group"><button class="btn btn-primary" type="button" disabled="disabled">Suivant</button></div>';
+    
+    $return .= '        </div>
+                        <div class="row articles" style="margin-bottom: 15px;">';
 
     for ($i = 0; $i < $byPage; $i++) {
-        $return .= '<h2>'.$data[$offset+$i]['titre'].'</h2>
-        <p>'.$data[$offset+$i]['letexte'].'</p>
-        <p>Ecrit le : '.$data[$offset+$i]['ladate'].'</p>';
+        $return .= '        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 item"><!-- <img class="img-fluid" src="assets/img/desk.jpg"> -->
+                                <h3 class="name">'.$data[$offset+$i]['titre'].'</h3>
+                                <p class="description">'.$data[$offset+$i]['letexte'].'</p>
+                                <p class="text-right">'.$data[$offset+$i]['ladate'].'</p>
+                            </div>';
     }
+    $return .= '         </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    
+    
     return $return;
 }

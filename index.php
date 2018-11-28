@@ -198,6 +198,11 @@ function generateView() { // Gestion view for menu
     <? if (getGet('view') == '10') { ?>
         <link rel="stylesheet" type="text/css" href="assets/css/calc.css">
     <? } ?>
+    <? if (getGet('view') == '11') { ?>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/Bold-BS4-Jumbotron-with-Particles-js-1.css">
+        <link rel="stylesheet" href="assets/css/Bold-BS4-Jumbotron-with-Particles-js.css">
+    <? } ?>
 </head>
 <body>
     <header>
@@ -220,6 +225,11 @@ function generateView() { // Gestion view for menu
     <? if (getGet('view') == '10') { // Test d'une calto ?>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="assets/js/calc.js"></script>
+    <? } ?>
+    <? if (getGet('view') == '11') { ?>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/Bold-BS4-Jumbotron-with-Particles-js.js"></script>
     <? } ?>
 </body>
 </html>
