@@ -113,7 +113,7 @@ function pagination() {
                 <div class="row center-vertically">
                     <div class="col">
                         <div class="intro">
-                            <h2 class="text-center" style="margin-top: 58px; margin-bottom: 58px;">Articles</h2>
+                            <h2 class="text-center" style="margin-top: 58px; margin-bottom: 58px;">La Pagination</h2>
                         </div>
                         <div class="btn-toolbar justify-content-between" style="margin-bottom: 15px;">';
     if ($page >= 1)

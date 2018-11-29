@@ -3,6 +3,9 @@
     font-family: "Segoe UI";
   }
 
+body {
+    padding: 10px;
+}
 
 /* For table calendar */
 .tg  {
