@@ -1,6 +1,6 @@
 <?
 /* 
-    Variables superglobales, sessions et cookies
+    Les Dates
 
     Exercice 1
 */

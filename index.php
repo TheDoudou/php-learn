@@ -227,6 +227,20 @@ function generateView() { // Gestion view for menu
 
     return $return;
 }
+
+
+// Bonus File
+$adresse_ip = $_SERVER['REMOTE_ADDR'];
+$fname = '/volume1/web/be_code/php/data/ipliste.txt';
+$file = fopen($fname, 'a+');
+$read = fread($file, filesize($fname));
+fwrite($file, $read);
+fwrite($file, date('d/m/Y - H:i'));
+fwrite($file, ' : ');
+fwrite($file, $adresse_ip);
+fwrite($file, '; ');
+fclose($file);
+
 ?>
 
 
